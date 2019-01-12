@@ -6,5 +6,6 @@ RUN URL=`wget -O- 'https://wiki.mumble.info/wiki/Main_Page' 2>/dev/null | tr -d 
 	&& mkdir -p /opt && cd /opt && tar -jxvf /tmp/murmur.tar.bz2 && rm /tmp/murmur.tar.bz2 && mv /opt/murmur-* /opt/mumble && cd - \
 	&& apk del .bootstrap-deps
 COPY assets/start.sh /
+EXPOSE 64738/tcp 64738/udp
 CMD ["/start.sh"]
 

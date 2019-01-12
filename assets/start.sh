@@ -8,5 +8,8 @@ if [ ! -f /etc/mumble/mumble.ini ]; then
 	cp /opt/mumble/murmur.ini /etc/mumble/mumble.ini
 	exit 1
 fi
+
+[ ! -d /data ] && mkdir /data
+
 /opt/mumble/murmur.x86 -ini /etc/mumble/mumble.ini -fg
 
