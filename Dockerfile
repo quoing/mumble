@@ -1,6 +1,6 @@
 FROM alpine:latest
 MAINTAINER quoing_docker@mess.cz
-ARG GIT_TAG=1.3.0
+ARG GIT_TAG=1.3.1-rc1
 RUN apk add --no-cache --virtual .bootstrap-deps wget ca-certificates
 RUN URL="https://github.com/mumble-voip/mumble/releases/download/${GIT_TAG}/murmur-static_x86-${GIT_TAG}.tar.bz2" \
 	&& wget -O /tmp/murmur.tar.bz2 $URL \
